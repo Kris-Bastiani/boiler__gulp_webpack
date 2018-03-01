@@ -78,7 +78,7 @@ gulp.task('sass', cb => {
 // NOTE: It seems gulp src here, while required for this to work, does nothing as webpack's entry points are used.
 gulp.task('webpack', cb => {
 	pump([
-		gulp.src('./src/assets/css/**/app.js'),
+		gulp.src('./src/assets/js/**/app.js'),
 		webpack(webpackConfig),
 		NODE_ENV === 'production' ? uglify({ mangle: false }) : through2.obj(),
 		gulp.dest('./dist'),
