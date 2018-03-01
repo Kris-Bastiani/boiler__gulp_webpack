@@ -7,9 +7,11 @@ const gulp = require('gulp'),
 	connect = require('gulp-connect'),
 	imagemin = require('gulp-imagemin'),
 	pug = require('gulp-pug'),
+	pump = require('pump'),
 	rename = require('gulp-rename'),
 	sass = require('gulp-sass'),
-	pump = require('pump'),
+	through2 = require('through2'),
+	uglify = require('gulp-uglify'),
 	webpack = require('webpack-stream'),
 	webpackConfig = require('./webpack.config.js');
 
@@ -78,6 +80,7 @@ gulp.task('webpack', cb => {
 	pump([
 		gulp.src('./src/assets/css/**/app.js'),
 		webpack(webpackConfig),
+		NODE_ENV === 'production' ? uglify({ mangle: false }) : through2.obj(),
 		gulp.dest('./dist'),
 		connect.reload()
 	], cb);

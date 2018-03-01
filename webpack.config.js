@@ -35,17 +35,4 @@ const config = {
 	plugins: []
 };
 
-if (NODE_ENV === 'production') {
-	config.plugins = [
-		new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false
-			}
-		}),
-		new WebpackClearConsole()
-	];
-} else {
-	config.plugins = [];
-}
-
 module.exports = config;
