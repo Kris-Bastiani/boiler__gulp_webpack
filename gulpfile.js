@@ -1,9 +1,10 @@
 // ================================================== VARIABLES
 
+const NODE_ENV = process.env.NODE_ENV || 'development';
+
 const gulp = require('gulp'),
 	autoprefixer = require('gulp-autoprefixer'),
 	connect = require('gulp-connect'),
-	gutil = require('gulp-util'),
 	imagemin = require('gulp-imagemin'),
 	pug = require('gulp-pug'),
 	rename = require('gulp-rename'),
@@ -11,9 +12,6 @@ const gulp = require('gulp'),
 	pump = require('pump'),
 	webpack = require('webpack-stream'),
 	webpackConfig = require('./webpack.config.js');
-
-const NODE_ENV = process.env.NODE_ENV || 'development';
-// e.g. NODE_ENV === 'production' ? gutil.log('production') : gutil.noop();
 
 const pug_locals = {
 	$meta: {
