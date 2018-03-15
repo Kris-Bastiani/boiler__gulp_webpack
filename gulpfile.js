@@ -2,9 +2,9 @@
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
-const gulp = require('gulp'),
-	autoprefixer = require('gulp-autoprefixer'),
+const autoprefixer = require('gulp-autoprefixer'),
 	connect = require('gulp-connect'),
+	gulp = require('gulp'),
 	imagemin = require('gulp-imagemin'),
 	pug = require('gulp-pug'),
 	pump = require('pump'),
