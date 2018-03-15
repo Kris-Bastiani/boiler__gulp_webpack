@@ -1,6 +1,6 @@
 # Gulp + Webpack Boilerplate
 
-A build setup that uses Webpack to compile JS using Babel and React, and uses Gulp to minify images using imagemin, compile HTML from Pug and compile CSS from Sass.
+A build setup that uses Webpack to compile JS using Babel, and uses Gulp to minify images using imagemin, compile HTML from Pug and compile CSS from Sass.
 
 ## Getting Started
 
