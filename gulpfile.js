@@ -18,5 +18,5 @@ gulp.task('webpack', require('./lib/tasks/webpack'));
 gulp.task('default', [
 	'build',
 	'watch',
-	'connect'
+	'connect',
 ]);

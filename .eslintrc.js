@@ -1,12 +1,12 @@
 module.exports = {
 	extends: 'airbnb-base',
 	rules: {
-		indent: [ 'error', 'tab' ],
+		indent: ['error', 'tab'],
 		'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
 		'no-mixed-operators': [
 			'error',
 			{
-				'groups': [
+				groups: [
 					['+', '-', '*', '/', '%', '**'],
 					['&', '|', '^', '~', '<<', '>>', '>>>'],
 					['==', '!=', '===', '!==', '>', '>=', '<', '<='],
@@ -17,7 +17,5 @@ module.exports = {
 		],
 		'no-tabs': 0,
 	},
-	env: {
-		browser: true,
-	},
+	env: { browser: true },
 };

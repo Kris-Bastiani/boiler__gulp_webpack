@@ -1,49 +1,49 @@
-const path = require('path'),
-	path_js = path.resolve(__dirname, 'src', 'assets', 'js'),
-	UglifyJsPlugin = require('uglifyjs-webpack-plugin'),
-	webpack = require('webpack');
+require('webpack');
+const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
+const jsPath = path.resolve(__dirname, 'src', 'assets', 'js');
 
 const loaders = [
 	{
 		loader: 'babel-loader',
 		options: {
 			presets: ['env'],
-			cacheDirectory: true
-		}
-	}
+			cacheDirectory: true,
+		},
+	},
 ];
 
 const plugins = [
 	new UglifyJsPlugin({
 		uglifyOptions: {
 			compress: {
-				pure_funcs: ['console.log']
+				pure_funcs: ['console.log'],
 			},
-			mangle: false
-		}
-	})
+			mangle: false,
+		},
+	}),
 ];
 
 const config = {
 	entry: {
-		app: ['babel-polyfill', path.join(path_js, 'app.js')]
+		app: ['babel-polyfill', path.join(jsPath, 'app.js')],
 	},
 	output: {
 		filename: path.join('assets', 'js', '[name].js'),
-		path: path.resolve(__dirname, 'dist')
+		path: path.resolve(__dirname, 'dist'),
 	},
 	module: {
 		rules: [
 			{
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
-				use: loaders
-			}
-		]
+				use: loaders,
+			},
+		],
 	},
-	plugins: NODE_ENV === 'production' ? plugins : []
+	plugins: NODE_ENV === 'production' ? plugins : [],
 };
 
 module.exports = config;
