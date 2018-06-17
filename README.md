@@ -16,4 +16,4 @@ To start a local server on port 3000 with livereload enabled, run `gulp`.
 
 ## Production
 
-To build in production mode, run `npm run build:prod`.
+To build in production mode, run `yarn run build:prod`.
