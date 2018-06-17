@@ -2,6 +2,7 @@ module.exports = {
 	extends: 'airbnb-base',
 	rules: {
 		indent: [ 'error', 'tab' ],
+		'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
 		'no-mixed-operators': [
 			'error',
 			{
