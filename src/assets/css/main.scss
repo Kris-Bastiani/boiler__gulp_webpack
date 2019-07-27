@@ -1,5 +1,5 @@
 @charset 'utf-8';
-
-@import 'partials/vars';
-@import 'partials/mixins';
-@import 'partials/base';
+// ================================================== DEFINITIONS
+@import 'variables';
+// ================================================== BASE
+@import 'base/root';
